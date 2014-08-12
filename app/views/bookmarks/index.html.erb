@@ -11,7 +11,7 @@
   <tbody>
   <% @bookmarks.each do |bookmark| %>
     <tr>
-      <td><%= link_to bookmark.title, bookmark.url %></td>
+      <td><%= link_to bookmark.title, bookmark.url, :target => "_blank" %></td>
               <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
         <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
