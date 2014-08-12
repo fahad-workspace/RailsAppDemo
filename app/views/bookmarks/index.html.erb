@@ -1,0 +1,26 @@
+<h1>Listing bookmarks</h1>
+
+<table>
+  <thead>
+  </thead>
+
+  <tbody>
+<h2>Latest Bookmarks</h2>
+<table style="width: 100%">
+
+  <tbody>
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td><%= link_to bookmark.title, bookmark.url %></td>
+              <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookmark', new_bookmark_path %>
