@@ -18,6 +18,8 @@
 #server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 role :web, %w{fahadsarwar@172.16.2.99}
+role :app, %w{fahadsarwar@172.16.2.99}
+role :db, %w{fahadsarwar@172.16.2.99}
   # ...is the same as doing...
 server '172.16.2.99', roles: [:web], user: 'fahadsarwar'
 #server '172.16.2.99', roles: [:web], port: 1234
