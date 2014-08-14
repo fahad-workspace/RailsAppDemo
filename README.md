@@ -3,6 +3,6 @@ RailsAppDemo
 
 Demo Rails App
 
-DB Migrate: rake db:migrate RAILS_ENV=development  
+DB Migrate: rake db:migrate RAILS_ENV=staging 
   
-RUN Server: RAILS_ENV=development rails server
+RUN Server: RAILS_ENV=staging rails server

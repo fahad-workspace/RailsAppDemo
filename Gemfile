@@ -35,6 +35,8 @@ gem 'spring',        group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'capistrano-rails'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
@@ -45,6 +47,8 @@ gem 'foundation-rails'
 gem 'simple_form'
 
 gem 'devise'
+
+gem 'execjs'
 
 group :development do
   gem 'capistrano-rails'

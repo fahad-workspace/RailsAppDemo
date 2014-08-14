@@ -58,3 +58,4 @@ pickle-email-*.html
 .idea
 /*.tmproj
 **.swp
+config/database.yml

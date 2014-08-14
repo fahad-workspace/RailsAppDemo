@@ -152,6 +152,7 @@ DEPENDENCIES
   capistrano-rails
   coffee-rails (~> 4.0.0)
   devise
+  execjs
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
