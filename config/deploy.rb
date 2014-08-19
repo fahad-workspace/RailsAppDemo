@@ -51,6 +51,8 @@ namespace :deploy do
   #after :publishing, :restart
   
   after 'deploy:publishing', 'deploy:restart'
+  
+  puts "I AM HERE"
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
