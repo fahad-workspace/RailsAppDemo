@@ -45,7 +45,7 @@ namespace :deploy do
 		on "fahadsarwar@172.16.2.99" do
 			on roles(:app), in: :sequence, wait: 5 do
 				# Your restart mechanism here, for example:
-				path = release_path.join('tmp/StartWebApp.sh')
+				path = release_path.join('StartWebApp.sh')
 				execute "printf '#!/bin/bash' > #{path}"
 				execute "printf 'RAILS_ENV=staging rails server' > #{path}"
 				execute "bash #{path}"
