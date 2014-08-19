@@ -46,11 +46,19 @@ namespace :deploy do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
       puts "I AM HERE"
-      execute :rails, 'server'
     end
   end
+  
+  task :execute_on_server do
+		on "fahadsarwar@172.16.2.99" do
+			puts "<< BEFORE >>"
+			execute "RAILS_ENV=staging rails server"
+			puts "<< AFTER >>"
+		end
+	end
 
-  after :publishing, :restart
+  #after :publishing, :restart
+  after :publishing, :execute_on_server
   
   #after 'deploy:publishing', 'deploy:restart'
 
