@@ -42,7 +42,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+    run "touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
 	end
 
   #task :restart do
