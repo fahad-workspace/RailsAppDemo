@@ -42,10 +42,15 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-      puts "I AM HERE"
+		on "fahadsarwar@172.16.2.99" do
+			on roles(:app), in: :sequence, wait: 5 do
+				# Your restart mechanism here, for example:
+				path = release_path.join('tmp/StartWebApp.sh')
+				execute :touch, path
+				echo "RAILS_ENV=staging rails server" >> myscript.sh
+				echo "2nd Line" >> myscript.sh
+				puts "I AM HERE"
+			end
     end
   end
   
@@ -60,8 +65,7 @@ namespace :deploy do
 		end
 	end
 
-  #after :publishing, :restart
-  after :publishing, :execute_on_server
+  after :publishing, :restart
   
   #after 'deploy:publishing', 'deploy:restart'
 
