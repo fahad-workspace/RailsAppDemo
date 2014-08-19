@@ -50,7 +50,3 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'execjs'
-
-group :development do
-  gem 'capistrano-rails'
-end
