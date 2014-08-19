@@ -46,7 +46,7 @@ namespace :deploy do
 			on roles(:app), in: :sequence, wait: 5 do
 				# Your restart mechanism here, for example:
 				path = release_path.join('tmp/StartWebApp.sh')
-				execute :touch, path
+				execute "printf 'RAILS_ENV=staging rails server' > #{path}
 				echo "RAILS_ENV=staging rails server" >> path
 				echo "2nd Line" >> myscript.sh
 				puts "I AM HERE"
