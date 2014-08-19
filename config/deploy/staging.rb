@@ -22,6 +22,8 @@ role :app, %w{fahadsarwar@172.16.2.99}
 role :db, %w{fahadsarwar@172.16.2.99}
   # ...is the same as doing...
 server '172.16.2.99', roles: [:web], user: 'fahadsarwar'
+server '172.16.2.99', roles: [:app], user: 'fahadsarwar'
+server '172.16.2.99', roles: [:db], user: 'fahadsarwar'
 #server '172.16.2.99', roles: [:web], port: 1234
 #server '172.16.2.99', roles: [:web]
 
