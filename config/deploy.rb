@@ -42,18 +42,22 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-		on "fahadsarwar@172.16.2.99" do
-			on roles(:app), in: :sequence, wait: 5 do
-				# Your restart mechanism here, for example:
-				path = release_path.join('StartWebApp.sh')
-				execute "echo '#!/bin/bash' >> #{path}"
-				execute "echo 'cd #{release_path}' >> #{path}"
-				execute "echo 'bundle install' >> #{path}"
-				execute "echo 'RAILS_ENV=staging rails server' >> #{path}"
-				execute "bash #{path}"
-			end
-    end
-  end
+    run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+	end
+
+  #task :restart do
+		#on "fahadsarwar@172.16.2.99" do
+			#on roles(:app), in: :sequence, wait: 5 do
+				## Your restart mechanism here, for example:
+				#path = release_path.join('StartWebApp.sh')
+				#execute "echo '#!/bin/bash' >> #{path}"
+				#execute "echo 'cd #{release_path}' >> #{path}"
+				#execute "echo 'bundle install' >> #{path}"
+				#execute "echo 'RAILS_ENV=staging rails server' >> #{path}"
+				##execute "bash #{path}"
+			#end
+    #end
+  #end
 
   after :publishing, :restart
   
