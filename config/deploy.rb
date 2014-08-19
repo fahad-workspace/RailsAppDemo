@@ -53,7 +53,7 @@ namespace :deploy do
 		on "fahadsarwar@172.16.2.99" do
 			puts "<< BEFORE >>"
 			puts Dir.pwd
-			Dir.chdir(release_path)
+			Dir.chdir("/var/www/RailsAppDemo/releases/20140819045826")
 			puts Dir.pwd
 			execute "RAILS_ENV=staging rails server"
 			puts "<< AFTER >>"
