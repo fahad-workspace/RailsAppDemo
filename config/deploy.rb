@@ -47,8 +47,8 @@ namespace :deploy do
 				# Your restart mechanism here, for example:
 				path = release_path.join('StartWebApp.sh')
 				execute "echo '#!/bin/bash' >> #{path}"
-				execute "echo 'cd #{release_path}\n' >> #{path}"
-				execute "echo 'RAILS_ENV=staging rails server\n' >> #{path}"
+				execute "echo 'cd #{release_path}' >> #{path}"
+				execute "echo 'RAILS_ENV=staging rails server' >> #{path}"
 				execute "bash #{path}"
 			end
     end
