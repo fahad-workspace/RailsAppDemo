@@ -45,7 +45,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-      run "rails server"
+      run "RAILS_ENV=staging rails server"
     end
   end
 
