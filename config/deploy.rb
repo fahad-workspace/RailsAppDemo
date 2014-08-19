@@ -42,13 +42,11 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-		on "fahadsarwar@172.16.2.99" do
-			on roles(:app), in: :sequence, wait: 5 do
-				# Your restart mechanism here, for example:
-				path = release_path.join('tmp/StartWebApp.sh')
-				execute "printf 'RAILS_ENV=staging rails server' > #{path}
-			end
-    end
+  	on roles(:app), in: :sequence, wait: 5 do
+			# Your restart mechanism here, for example:
+			path = release_path.join('tmp/StartWebApp.sh')
+			execute "printf 'RAILS_ENV=staging rails server' > #{path}
+		end
   end
   
   task :execute_on_server do
