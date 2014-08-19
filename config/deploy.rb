@@ -52,10 +52,10 @@ namespace :deploy do
   task :execute_on_server do
 		on "fahadsarwar@172.16.2.99" do
 			puts "<< BEFORE >>"
-			puts Dir.pwd
-			execute "cd #{release_path}"
-			puts Dir.pwd
-			execute "RAILS_ENV=staging rails server"
+			#puts Dir.pwd
+			#execute "cd #{release_path}"
+			#puts Dir.pwd
+			execute "cd #{release_path} && RAILS_ENV=staging rails server"
 			puts "<< AFTER >>"
 		end
 	end
